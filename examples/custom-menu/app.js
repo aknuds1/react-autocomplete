@@ -1,4 +1,5 @@
 import React from 'react'
+import DOM from 'react-dom'
 import Autocomplete from '../../lib/index'
 import { getStates, matchStateToTerm, sortStates, styles, fakeRequest } from '../../lib/utils'
 
@@ -21,13 +22,13 @@ let App = React.createClass({
           look as well as the rendering of it. In this case we put headers for each
           letter of the alphabet.
         </p>
+        <label htmlFor="states-autocomplete">Choose a state from the US</label>
         <Autocomplete
           value={this.state.value}
-          labelText="Choose a state from the US"
-          inputProps={{name: "US state"}}
+          inputProps={{name: "US state", id: "states-autocomplete"}}
           items={this.state.unitedStates}
           getItemValue={(item) => item.name}
-          onSelect={value => this.setState({ value, unitedStates: [] }) }
+          onSelect={(value, state) => this.setState({ value, unitedStates: [state] }) }
           onChange={(event, value) => {
             this.setState({ value, loading: true })
             fakeRequest(value, (items) => {
@@ -77,6 +78,6 @@ let App = React.createClass({
   }
 })
 
-React.render(<App/>, document.getElementById('container'))
+DOM.render(<App/>, document.getElementById('container'))
 
 
