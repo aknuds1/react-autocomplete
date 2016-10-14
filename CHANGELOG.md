@@ -1,13 +1,35 @@
 # CHANGELOG
 We try to follow [http://keepachangelog.com/](http://keepachangelog.com/) recommendations for easier to update & more readable change logs.
 
-## Unreleased
+## [Unreleased]
 _(add items here for easier creation of next log entry)_
+
+## [1.3.1] - 2016-08-01
+### Changed
+- Re-publish without `node_modules` and `coverage` included in tarball
+
+## [1.3.0] - 2016-08-01
+### Added
+- `props.open` to manually control when the menu is open/closed (#163)
+- `props.onMenuVisibilityChange` callback that is invoked every time the menu is opened/closed by `Autocomplete`'s internal logic. Pairs well with `props.open` for granulated control over the menu's visibility (#163)
+
+### Removed
+- `bower.json` has been removed from the repo
+
+## [1.2.1] - 2016-08-09
 ### Fixed
+- `build/package.json` incorrectly stated `1.1.0` for the version, a quick rebuild and
+patch version publish got these back in sync.
+
+## [1.2.0] - 2016-08-09
+### Added
+- `props.autoHighlight` to toggle automatic highlighting of top match (see #146 & #159)
+
+### Fixed
+- Bug which prevented menu from closing properly in IE (see #153)
 - .babelrc presets were causing 1 user(s) to not be able to run tests locally with Jest
 
-
-## [1.1.0] - 2015-12-03
+## [1.1.0] - 2016-08-02
 ### Added
 - Ability to return custom components from renderMenu/renderItem (see #127)
 - Added missing `propTypes`
@@ -27,7 +49,7 @@ _(add items here for easier creation of next log entry)_
 - Jest ignore rules & configurations
 
 
-v1.0.1 - 26 June 2016
+## [1.0.1] - 2016-06-26
 --------------------------------------
 
 - Fixed compatibility issues with React 15.x, removed use of previously deprecated APIs
@@ -113,4 +135,10 @@ v0.1.0 - Wed, 12 Aug 2015 19:22:26 GMT
 
 -
 
-
+[Unreleased]: https://github.com/reactjs/react-autocomplete/compare/v1.3.1...HEAD
+[1.3.1]: https://github.com/reactjs/react-autocomplete/compare/v1.3.0...v1.3.1
+[1.3.0]: https://github.com/reactjs/react-autocomplete/compare/v1.2.1...v1.3.0
+[1.2.1]: https://github.com/reactjs/react-autocomplete/compare/v1.2.0...v1.2.1
+[1.2.0]: https://github.com/reactjs/react-autocomplete/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/reactjs/react-autocomplete/compare/v1.0.1...v1.1.0
+[1.0.1]: https://github.com/reactjs/react-autocomplete/compare/v1.0.0...v1.0.1
